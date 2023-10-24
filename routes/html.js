@@ -7,9 +7,9 @@ router.get('/notes', (req, res) =>
 );
 
 // the GET route for home page
-router.get('*', (req,res) =>
+router.get('*', (req, res) =>
     res.sendFile(path.join(__dirname, '../public/index.html'))
-    );
+);
 
     module.exports = router;
 

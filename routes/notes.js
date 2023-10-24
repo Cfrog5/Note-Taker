@@ -6,7 +6,7 @@ const { v4: uuidv4 } = require('uuid');
 // GET Route for retrieving all notes
 router.get('/notes', (req, res) => {
     return readFromFile('./db/db.json').then((data) => res.json(JSON.parse(data))
-    )
+)
 });
 
 // GET Route for retrieving specific note
@@ -19,14 +19,14 @@ router.get('/notes/:id', (req, res) => {
             return result.length > 0
                 ? res.json(result)
                 : res.json('No note with that ID');
-        });
+    });
 });
 // DELETE route for deleting specific note
 router.delete('/notes/:id', (req, res) => {
-    const. noteId = req.params.id;
+    const noteId = req.params.id;
     readFromFile('./db/db.json')
-    .then((data) => JSON.parse(data))
-    .then((json) => {
+ .then((data) => JSON.parse(data))
+ .then((json) => {
         //Making new array of all notes except the ID provided in the URL
         const result = json.filter((title) => title.id !== noteId);
 
@@ -37,14 +37,13 @@ router.delete('/notes/:id', (req, res) => {
         res.json(`Item ${noteId} has been deleted 🗑️`);
     });
 });
-
 //POST Route for submitting notes
 router.post('/notes', (req, res) => {
     //Destructing assignment for items in req.body
     const { title, text } = req.body;
 
     // If all required properties are present
-    if (ttitle && text ) {
+    if (title && text ) {
         //Variable for object that will save
         const newNotes = {
             title,

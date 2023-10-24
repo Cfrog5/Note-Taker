@@ -2,17 +2,17 @@ const fs = require('fs');
 const util = require('util');
 
 //Promise version of fs.readFile
-const readFromFile = util.MIMEParams,promisify(fs.readFile);
+const readFromFile = util.Params,promisify(fs.readFile);
 /** 
  * Function that writes data to JSON file given a destination and some content
- *  @param {string} destination the file you want to write to.
+ * @param {string} destination the file you want to write to.
  * @param {object} content The content you want to write to the file.
  * @returns {void} Nothing
 */
 
 const writeToFile = (destination, content) =>
-    fs.writeFile(destination, Json.stringify(content, null, 4), (err) =>
-    err ? console.error(err) : console.info (`\nData written to ${destination}`)
+    fs.writeFile(destination, JSON.stringify(content, null, 4), (err) =>
+    err ? console.error(err) : console.info(`\nData written to ${destination}`)
     );
 
 /**
